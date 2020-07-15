@@ -7,8 +7,8 @@ export default{
             isAuthenticated(request);//request가 있나 없나 확인 middlewares.js에서
             const { postId} = args;
             const {user} = request;
-         try{
-            const existingLike = await prisma.$exists.like({
+            const filterOptions =
+            {
                 AND:[
                     {user:{
                         id:user.id
@@ -20,23 +20,26 @@ export default{
                     }
                 }
                 ]
-            });
+            };
+         try{
+            const existingLike = await prisma.$exists.like(filterOptions);
             if(existingLike)
             {
-
+                await prisma.deleteManyLikes(filterOptions);
             } else 
             {
                 await prisma.createLike({user:{
-                    connext:{
+                    connect:{
                         id: user.id
-                    },
+                    }
+                },
                         post:
                         {
                             connect:{
                             id:postId
                             }
                         }
-                }})
+                });
             }
             return true;
          }catch{
