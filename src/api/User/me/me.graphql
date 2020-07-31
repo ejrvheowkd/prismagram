@@ -1,0 +1,7 @@
+type ProfileRespones{
+    user: User!
+    posts:[Post!]!
+}
+type Query{
+    me: ProfileRespones!
+}
