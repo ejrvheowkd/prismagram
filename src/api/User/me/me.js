@@ -10,8 +10,8 @@ export default{
            const userProfile = await prisma.user({id: user.id})
            const posts = await prisma.user({id: user.id}).posts();
             return{
-                userProfile,posts
-            }
+                user: userProfile, posts
+            };
         }
     }
 };
