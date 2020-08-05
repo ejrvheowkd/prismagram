@@ -1,0 +1,9 @@
+enum ACTIONS{
+EDIT
+DELETE
+}
+#enum은 하나 또는 나머지라고 생각하면 될거같아 edit와 DELETE중 하나를 선택한다
+type Mutation{
+   editPost(id:String!,caption:String,location:String ,action:ACTIONS
+   ):Post!
+}
