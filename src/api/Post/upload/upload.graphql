@@ -1,0 +1,5 @@
+
+# post 하나와 많은 이미지나 비디오 등등 이 생길건데 파일 하나로 될거야
+type Mutation{
+    upload(caption:String!, files: [String!]!):Post!
+}
