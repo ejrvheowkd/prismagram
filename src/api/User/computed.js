@@ -26,25 +26,5 @@ export default{
             const {id:parentId} = parent;
             return user.id===parentId;//=== ( =뜻)
         }
-    },
-    Post:{
-        isLiked: (parent, _,{request})=> {
-            const {user} = request; //requset에서 체크해서 user 받고
-            const {id} = parent; // 이미지의 id를 받는다
-            return prisma.$exists.like({
-                AND:[
-                    {
-                    user:{
-                        id: user.id
-                    }
-                },
-                {
-                    post:{
-                        id
-                    }
-                }
-            ]
-        });
-        }
     }
 };
