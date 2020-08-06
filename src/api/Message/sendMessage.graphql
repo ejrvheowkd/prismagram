@@ -1,0 +1,4 @@
+type Mutation{
+    sendMessage(roomId:String,message:String!,toID:String):Message
+    #room이 없으면 to로 새로운 room을 만든다
+}
