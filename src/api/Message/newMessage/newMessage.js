@@ -14,7 +14,7 @@ export default{
                             }
                         }
                     ]
-                });
+                }).node();
             },
             resolve: payload=>payload//payload는 새로운것이 막 변경되면 리턴하는거다
         }
