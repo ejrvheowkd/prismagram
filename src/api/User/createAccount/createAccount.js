@@ -8,7 +8,7 @@ export default{
                 throw Error("Tish username is already taken");
             }
            try{
-            const user = await prisma.createUser({
+                await prisma.createUser({
                 username,
                 email,
                 firstName,
@@ -17,7 +17,7 @@ export default{
             });
             return true;
            }
-           catch
+           catch (e)
            {
                 return false;
            }
