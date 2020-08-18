@@ -3,6 +3,7 @@ export default{
     Mutation: {
         createAccount: async(_,args)=>{
             const{username,email,firstName="",lastName="",bio=""}=args;
+           try{
             const user = await prisma.createUser({
                 username,
                 email,
@@ -10,7 +11,12 @@ export default{
                 lastName,
                 bio
             });
-            return user;
+            return true;
+           }
+           catch
+           {
+                return false;
+           }
         }
     }
 }; 
