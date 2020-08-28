@@ -1,11 +1,11 @@
 type User {
   id: ID! @id
   avatar: String @default(
-    value:"
+    value:"https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-1/s148x148/107828111_3130692477025009_7609410950943915573_n.jpg?_nc_cat=110&_nc_sid=1eb0c7&_nc_eui2=AeE1-KeR_t_lgNhKxtzPGO5wZL3Bx2TnmgtkvcHHZOeaC62bvt8Fz3frCyGcoUSYjoaUYjNvAQjx54kxxMuroPqY&_nc_ohc=dOAuQEuaN80AX87YHnu&_nc_ht=scontent-ssn1-1.xx&tp=7&oh=fc1b32119c26f6280217a21c4c94fb37&oe=5F6B1838"
   )
   username: String! @unique
   email: String! @unique
-  firstName: String @default(value: "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-1/s148x148/107828111_3130692477025009_7609410950943915573_n.jpg?_nc_cat=110&_nc_sid=1eb0c7&_nc_eui2=AeE1-KeR_t_lgNhKxtzPGO5wZL3Bx2TnmgtkvcHHZOeaC62bvt8Fz3frCyGcoUSYjoaUYjNvAQjx54kxxMuroPqY&_nc_ohc=dOAuQEuaN80AX87YHnu&_nc_ht=scontent-ssn1-1.xx&tp=7&oh=fc1b32119c26f6280217a21c4c94fb37&oe=5F6B1838")
+  firstName: String @default(value: "")
   lastName: String
   bio: String
   following: [User!]! @relation(name: "FollowRelation")
